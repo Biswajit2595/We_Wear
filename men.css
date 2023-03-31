@@ -31,7 +31,7 @@ body{
 #navbag>a{
     text-decoration: none;
     color: #f8f8f8;
-    font-size: 20px;
+    font-size: 25px;
 }
 #navbar{
     background-color: #2d2d2d;
@@ -157,25 +157,155 @@ body{
 }
 /* --------------------------global banner------------------- */
 #hero{
-    /* width: 100%; */
+    width: 100%;
     background-image: url("https://content.asos-media.com/-/media/homepages/mw/2023/march/27-prime/basics-hero/new/heros/en/still/homepage_desktop_2880x700.png");
-    /* background-color: #cccccc; */
+    background-color: #cccccc;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     text-align: center;
     /* margin: 0% 5%; */
+    padding: 20px;
 }
 #hero>div{
     width: 20%;
     border: 2px solid;
     height: 500px;
+}
+#hero>#hero_holder{
+    box-sizing: border-box;
+    width: 40%;
+    height: 100%;
+    border: 3px solid transparent;
     margin: auto;
 }
-#hero a{
-    text-decoration: none;
-    border: 2px solid red;
+#hero>#hero_holder>#hero_buttons{
+    /* border: 2px solid brown; */
+    margin-top: 70%;
 }
+#hero>#hero_holder>#hero_buttons>a{
+    text-decoration: none;
+    /* border: 2px solid red ; */
+    background-color: black;
+    color: #FFFFFF;
+    padding: 10px;
+    top: 50%;
+}
+#hero>#hero_holder>#hero_buttons>a:hover{
+    background-color: #fff;
+    color: black;
+    border: 2px solid;
+    font-weight: 700;
+}
+/* ----------------------------hero--------------------------------- */
+#proshow{
+    width: 75%;
+    /* border: 2px solid #0000ff; */
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    margin: 10px auto;
+    text-align: center;
+}
+#proshow>div>img{
+    width: 100%;
+}
+#proshow>div>h4{
+    margin: 5px;
+    /* font-size: 18px; */
+}
+#proshow>div>p{
+    margin: 5px;
+    /* font-size: 18px; */
+}
+/* ---------------------------------proshow----------------------------- */
+#car{
+    /* border: 2px solid blue; */
+    background-color: #9cf0e0;
+    text-align: center;
+    padding: 8px;
+}
+#sty{
+    /* border: 2px solid; */
+    width: fit-content;
+    background-color: #fff;
+    color: black;
+    font-weight: 600;
+    padding: 7px;
+    display: block;
+    margin: 30px auto;
+}
+.carousel{
+    /* border: 2px solid; */
+    width: 70%;
+    margin: auto;
+}
+.carousel-cell {
+    width: 25%;
+    height: auto;
+    margin-right: 10px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    counter-increment: carousel-cell;
+}
+.carousel-cell>img{
+    width: 100%;
+}
+.carousel-cell>h5{
+    /* border: 2px solid; */
+    margin: 4px 0px 0px 0px;
+    padding-left: 5px;
+}
+.carousel-cell p{
+    color: #666666;
+    padding-left: 5px;
+}
+
+.carousel-cell.is-selected {
+    background: white;
+}
+
+  /* cell number */
+.carousel-cell:before {
+    display: block;
+    text-align: center;
+    /* content: counter(carousel-cell); */
+    line-height: 200px;
+    font-size: 80px;
+    color: white;
+}
+/* -----------------------------------proshow2------------------------------- */
+#proshow2{
+    width: 65%;
+    /* border: 2px solid blue; */
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 30px;
+    margin: auto;
+}
+#proshow2>div{
+    margin: 20px 0px;
+    /* border: 2px solid saddlebrown; */
+    text-align: center;
+}
+#proshow2>div>img{
+    width: 100%;
+}
+#proshow2 p{
+    color: #666;
+}
+#proshow2>div>button{
+    border: 2px solid;
+    background-color: white;
+    padding: 10px;
+    font-weight: 600;
+}
+#proshow2>div button:hover{
+    background-color: black;
+    color:white;
+}
+
 /* --------------------------------------------------------------------- */
 #bann{
     background-image: url("https://content.asos-media.com/-/media/homepages/unisex/homepages/2022/07_july/premier-re-brand/live-assets/desktop-banner-2880x320_compress.png");
