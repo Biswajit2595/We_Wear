@@ -386,4 +386,29 @@ let prod=[
     }
 ]
 
+const cont=document.getElementById("cont");
+
+display(prod)
+function display(data){
+    cont.innerHTML=null;
+    data.forEach((elem)=>{
+        const card=document.createElement("div");
+        const img=document.createElement("img");
+        const brand=document.createElement("h3");
+        const price=document.createElement("h4")
+        const title=document.createElement("p")
+        const cat=document.createElement("p")
+        const Add=document.createElement("button")
+
+        img.src=elem.img;
+        brand.innerText=elem.brand;
+        price.innerText=`$ ${elem.price}`;
+        title.innerText=elem.title;
+        cat.innerText=elem.type;
+        Add.innerText="Add to Cart"
+
+        card.append(img,brand,price,title,cat,Add);
+        cont.append(card);
+    })
+}
 
