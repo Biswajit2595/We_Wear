@@ -110,10 +110,71 @@ body{
     font-weight: 600;
     border-radius: 20px;
 }
+.global>#one{
+    /* border: 2px solid black; */
+    margin: 0px;
+    font-size: 48px;
+    font-family:Helvetica,Arial,sans-serif;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    line-height: 48px;
+    font-style: italic;
+}
+.global>#two{
+    font-family: Helvetica,Arial,sans-serif;
+    font-size: 32px;
+    margin: 5px;
+    letter-spacing: 1.5px;
+    font-weight: 900;
+    font-style: italic;
+    line-height: 32px;
+}
+.global>#three{
+    font-size: 28px;
+    letter-spacing: 1.2px;
+    margin: 5px;
+    font-weight: 700;
+    line-height: 36px;
+    font-style: normal;
+}
+.global>#four{
+    font-size: 24px;
+    letter-spacing: 1.2px;
+    font-weight: 700;
+    line-height: 30px;
+    margin: 5px;
+}
+.global p:last-child{
+    font-size: 12px;
+    letter-spacing: .8px;
+    font-weight: 400;
+    line-height: 16px;
+}
 .global mark:last-child{
     border: 2px solid;
     padding: 3px;
     background-color: transparent;
+}
+/* --------------------------global banner------------------- */
+#hero{
+    /* width: 100%; */
+    background-image: url("https://content.asos-media.com/-/media/homepages/mw/2023/march/27-prime/basics-hero/new/heros/en/still/homepage_desktop_2880x700.png");
+    /* background-color: #cccccc; */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    /* margin: 0% 5%; */
+}
+#hero>div{
+    width: 20%;
+    border: 2px solid;
+    height: 500px;
+    margin: auto;
+}
+#hero a{
+    text-decoration: none;
+    border: 2px solid red;
 }
 /* --------------------------------------------------------------------- */
 #bann{
