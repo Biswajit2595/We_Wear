@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+    *{
+        box-sizing: border-box;
+    }
+    body{
+        margin: 0px;
+        padding: 0px;
+        background-color: #e8efef;
+    }
+    #main{
+        /* border: 2px solid red; */
+        width: 30%;
+        margin: auto;
+        padding: 10px;
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+    body>h2{
+        text-align: center;
+        color: #0e0f0f;
+    }
+    #main>#bot{
+        width: 80%;
+        text-align: center;
+        margin: auto;
+    }
+    #main>#bot>button{
+        height: 35px;
+        padding: 10px;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        border: none;
+        background-color: #fff;
+        margin-right: 3px;
+        margin-left: 3px;
+        opacity: 2;
+        transition: 0.5s;
+        display: inline-block;
+        text-decoration: none;
+        cursor: pointer;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    }
+    #main>#bot>button:hover{
+        opacity: 0.4;
+    }
+    #form{
+        /* border: 2px solid blue; */
+        width: 80%;
+        margin: auto;
+        color: #969494;
+        font-weight: 600;
+        font-family: sans-serif;
+    }
+    #form>input{
+        width: 100%;
+        height: 30px;
+        padding: 25px;
+        margin: auto;
+        border: none;
+        box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    }
+    #form>button{
+        border: none;
+        background-color: #2d2d2d;
+        color: #fdffff;
+        font-weight: 600;
+        width: 100%;
+        margin-top: 15px;
+        padding: 10px;
+    }
+</style>
+</head>
+<body>
+    <h2>WE WEAR</h2>
+    <div id="main">
+        <form action="" id="form">
+        <p>EMAIL ADDRESS:</p>
+        <input type="text" placeholder="" id="email" name="email">
+        <p>PASSWORD:</p>
+        <input type="password" placeholder="" id="password" name="password">
+        <br>
+        <button><span>SIGN IN</span></button>
+    </form>
+    <div id="bot">
+        <p><span>Forgot Password?</span></p>
+        <h3><span>OR SIGN IN WITH...</span></h3>
+        <button><i class="fa-brands fa-google" style="color: #ffd500;"></i> GOOGLE</button>
+        <button><i class="fa-brands fa-apple" style="color: #000000;"></i>  APPLE</button>
+        <button><i class="fa-brands fa-facebook" style="color: #10397e;"></i> FACEBOOK</button>
+        <p><span>Where has Twitter Gone?<i class="fa-brands fa-twitter" style="color: #194ca4;"></i></span> </p> 
+    </div>
+    </div>
+
+
+</body>
+</html>

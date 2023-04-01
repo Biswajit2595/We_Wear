@@ -387,6 +387,59 @@ let prod=[
 ]
 
 const cont=document.getElementById("cont");
+let brand=document.getElementById("filterbrand")
+brand.addEventListener("change",(()=>{
+    if(brand.value===""){
+        display(prod)
+    }else{
+        let fltrd=prod.filter((elem)=>brand.value===elem.brand)
+        display(fltrd)
+    }
+}));
+
+let type=document.getElementById("filtertype")
+type.addEventListener('change',(()=>{
+    if(type.value==="") display(prod)
+    else{
+        let fltrd=prod.filter((elem)=>type.value===elem.type)
+        display(fltrd)
+    }
+}))
+
+let sort=document.getElementById("sort")
+sort.addEventListener("click",(()=>{
+    if(sort.value==="") display(prod)
+    else if(sort.value==="ascend"){
+            let sorted=[...prod]
+                let srtd=sorted.sort((a,b)=>a.price-b.price)
+                display(srtd)
+            }
+            else if(sort.value==="desc"){
+                let sorted=[...prod]
+                let srtd=sorted.sort((a,b)=>b.price-a.price)
+                display(srtd)
+            }
+    }))
+let price=document.getElementById("filter")
+const lowinp=document.getElementById("lower")
+const upinp=document.getElementById("upper")
+const fltrbtn=document.getElementById("filter-btn")
+fltrbtn.addEventListener("click",function(){
+    if(lowinp.value==="" || upinp.value==="")
+    {
+    display(prod)
+    }
+    else{
+    let fltrd=prod.filter((prod)=>{
+        if(prod.price<=upinp.value && prod.price>=lowinp.value)
+        {
+        return true;
+        }
+    })
+    display(fltrd)
+    }
+})
+
 
 display(prod)
 function display(data){

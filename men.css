@@ -22,8 +22,8 @@ body{
     color: #666;
 }
 /* ----------------------top1--------------------------- */
-#navbar>div>img{
-    width: 100px;
+#navbar>div>a>img{
+    width: 120px;
     justify-content: center;
     margin-top: 10px;
 }
