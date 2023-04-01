@@ -4,9 +4,110 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product</title>
-    <link rel="stylesheet" href="./product.css">
+    <title>Wishlist</title>
+    <link rel="stylesheet" href="./wishlist.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<style>
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+#top1{
+    width: 100%;
+    text-align: right;
+    padding-right: 20px;
+    background-color: #f8f8f8;
+}
+#top1>a>img{
+    width: 13px;
+    justify-content: end;
+}
+#top1>a{
+    text-decoration: none;
+    color: #666;
+}
+/* ----------------------top1--------------------------- */
+#navbar>div>img{
+    width: 100px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#navbag>a{
+    text-decoration: none;
+    color: #f8f8f8;
+    font-size: 25px;
+}
+#navbar{
+    background-color: #2d2d2d;
+    /* border: 2px solid red; */
+    height: 60px;
+    margin: auto;
+    align-content: center;
+}
+#navbag{
+    width: 80%;
+    height: 100%;
+    /* border: 2px solid white; */
+    text-align: center;
+    margin: auto;
+    justify-content: space-between;
+}
+#navbag>input{
+    width: 40%;
+    border: 2px solid red;
+    padding: 5px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+#nav2{
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 40px;
+    display: block;
+    display: flex;
+    margin: auto;
+    background-color: #525050;
+}
+#nav2>#nav2a{
+    /* border: 2px solid wheat; */
+    margin: auto;
+}
+#nav2>#nav2a>button{
+    border: none;
+    font-size: 15px;
+    font-family: sans-serif;
+    background: none;
+    color: #FFFFFF;
+}
+#nav2>#nav2a>#red{
+    /* border: 2px solid whitesmoke; */
+    height: 40px;
+    background-color:#d01345;
+    transform: skew(-12deg);
+}
+#globann{
+    /* border: 1px solid; */
+    display: flex;
+}
+#globann>#left{
+    width: 100%;
+    background-color: black;
+    color: #FFFFFF;
+    text-align: center;
+}
+#globann>#rigt{
+    width: 100%;
+    text-align: center;
+}
+</style>
 </head>
 <body>
     <div id="top1">
@@ -32,6 +133,7 @@
             <a href="./checkout.html"><i class="fa-solid fa-bag-shopping" style="color: #ffffff;"></i></a>
         </div>
     </div>
+
 
     <div id="nav2">
         <div id="nav2a">
@@ -67,39 +169,5 @@
             </span>
         </div>
     </div>
-    <!-- -------------------navbar----------------------------------- -->
-    <!-- -------------------------sort & filtering------------------------ -->
-<div id="filters">
-    <select class="fltr" id="filterbrand">
-        <option value="">Brand</option>
-        <option value="Calvin Klein">Calvin Klein</option>
-        <option value="ADIDAS">Adidas</option> 
-        <option value="Tommy">Tommy</option> 
-        <option value="ASOS DESIGN">ASOS</option>  
-    </select>
-    <select class="fltr" id="filtertype">
-        <option value="">Product Type</option>
-        <option value="T-shirts">T-shirt</option>
-        <option value="Shirt">Shirt</option>
-        <option value="Cap">Cap</option>
-    </select>
-    <select class="fltr" id="sort">
-        <option value="">Sort by Price</option>
-        <option value="ascend">Low to High</option>
-        <option value="desc">High to Low</option>
-    </select>
-    <div class="fltr" id="filter">
-        <h4>Filter By Price Range</h4>
-        <input placeholder="From" type="number" id="lower" />
-        <input placeholder="To" type="number" id="upper" />
-        <button id="filter-btn">Filter</button>
-    </div>
-</div>
-
-<!-- -----------------------------------sort & filtering------------------------------ -->
-    <div id="cont">
-
-    </div>
 </body>
-<script src="./product.js"></script>
 </html>
