@@ -115,3 +115,6 @@ body{
 #cont>div>img{
     width: 100%;
 }
+#cont>div p{
+    margin: 10px;
+}
