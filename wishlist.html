@@ -232,10 +232,12 @@ body{
             </span>
         </div>
     </div>
-
+<!-- ---------------------------------top------------------------ -->
     <div id="cont">
 
     </div>
+
+    <!-- --------------------------------------footer-------------------------- -->
     <div id="footer">
         <div id="icons">
             <div id="iconsA">
@@ -310,7 +312,7 @@ function display(data){
         const title=document.createElement("p")
         const cat=document.createElement("p")
         const Add=document.createElement("button")
-        const wish=document.createElement("button")
+        const rem=document.createElement("button")
 
         img.src=elem.img;
         brand.innerText=elem.brand;
@@ -328,7 +330,7 @@ function display(data){
             
         }));
 
-        rem.innerHTML="&#9829;";
+        rem.innerText="Remove";
         rem.addEventListener('click',(()=>{
             data.splice(ind,1)
             display(data)
@@ -338,6 +340,17 @@ function display(data){
         cont.append(card);
     })
 }
+
+var checkcart=((elem)=>{
+    for(let a=0;a<LScart.length;a++)
+    {
+        if(elem.id===LScart[a].id)
+        {
+            return true;
+        }
+        return false;
+    }
+})
 
 </script>
 </html>

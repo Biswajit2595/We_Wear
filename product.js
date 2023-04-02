@@ -452,6 +452,7 @@ search.addEventListener("input", function () {
 })
 
 let LSwish=JSON.parse(localStorage.getItem("wlist")) || [];
+console.log(LSwish)
 let LScart=JSON.parse(localStorage.getItem("cart")) || [];
 
 display(prod)
@@ -483,10 +484,13 @@ function display(data){
             
         }));
 
-        wish.innerHTML="&#9829;";
+        wish.innerText="&#9829;";
         wish.addEventListener('click',(()=>{
-            if(checklist(elem)){alert("Product Already in Wishlist")}
-            else{
+            if(checklist(elem)){
+                alert("Product Already in Wishlist")
+            }
+            else
+            {
                 LSwish.push(elem);
             localStorage.setItem('wlist',JSON.stringify(LSwish))
             }
