@@ -484,7 +484,7 @@ function display(data){
             
         }));
 
-        wish.innerText="&#9829;";
+        wish.innerHTML="&#9829;";
         wish.addEventListener('click',(()=>{
             if(checklist(elem)){
                 alert("Product Already in Wishlist")
