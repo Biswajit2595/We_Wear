@@ -41,12 +41,12 @@ body{
     align-content: center;
 }
 #navbag{
-    width: 80%;
+    width: 100%;
     height: 100%;
-    /* border: 2px solid white; */
+    border: 2px solid white;
     text-align: center;
     margin: auto;
-    justify-content: space-between;
+    /* justify-content: space-between; */
 }
 #navbag>input{
     width: 40%;
@@ -410,3 +410,29 @@ body{
     padding: 0px 30px;
 }
 
+@media only screen and (max-width: 900px) and (min-width: 501px) {
+    #top1{
+        display: none;
+    }
+    #navbar>#navbag input{
+        display: none;
+    }
+    #nav2{
+        display: none;
+    }
+    #proshow2{
+        grid-template-columns: repeat(1,1fr);
+    }
+    #proshow{
+        grid-template-columns: repeat(2,1fr);
+    }
+    .carousel-cell{
+        width: 33%;
+    }
+    .tbrands{
+        grid-template-columns: repeat(3,1fr);
+    }
+    .cat{
+        flex-direction: column;
+    }
+}

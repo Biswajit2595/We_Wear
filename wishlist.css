@@ -96,3 +96,65 @@ body{
     width: 100%;
     text-align: center;
 }
+#cont{
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    margin: auto;
+    padding: 0px;
+}
+#cont>div{
+    border-radius: 5px;
+    /* padding: 5px; */
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background-color: #f8f3f3;
+}
+#cont>div>img{
+    width: 100%;
+}
+
+#cont>div p{
+    margin:  5px 0px;
+    font-weight: 500;
+}
+#cont>div h4{
+    padding: 0px 5px;
+    width: fit-content;
+    /* border: 2px solid; */
+    margin: 4px ;
+}
+#cont>div h3{
+    margin: 4px ;
+    padding: 0px 5px;
+}
+#filters{
+    width: 80%;
+    margin: 5px auto;
+    /* border: 2px solid; */
+    background-color: #e5e0e0;
+}
+#cont>div>button{
+    /* border: none; */
+    padding: 10px;
+    border-radius: 5px;
+    /* display: block; */
+    margin: 10px 0px auto;
+    background-color: aqua;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+/* -------------------media-query---------------- */
+@media only screen and (max-width: 900px) and (min-width: 501px) {
+    #top1{
+        display: none;
+    }
+    #navbar>#navbag input{
+        display: none;
+    }
+    #nav2{
+        display: none;
+    }
+    #cont{
+        grid-template-columns: repeat(1,1fr);
+    }
+}
