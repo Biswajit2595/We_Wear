@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wishlist</title>
-    <link rel="stylesheet" href="./wishlist.css">
+    <title>Cart</title>
+    <!-- <link rel="stylesheet" href="./wishlist.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <style>
@@ -32,7 +32,7 @@ body{
     color: #666;
 }
 /* ----------------------top1--------------------------- */
-#navbar>div>img{
+#navbar>div>a>img{
     width: 100px;
     justify-content: center;
     margin-top: 10px;
@@ -111,7 +111,7 @@ body{
 #cont{
     width: 70%;
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(1,1fr);
     gap: 10px;
     margin: auto;
     padding: 0px;
@@ -231,10 +231,12 @@ body{
             </span>
         </div>
     </div>
+<!-- -----------------------top---------------------------------- -->
 
     <div id="cont">
-
+        
     </div>
+    <!-- -----------------footer-------------------------------- -->
     <div id="footer">
         <div id="icons">
             <div id="iconsA">
@@ -291,13 +293,12 @@ body{
     </div>
 </body>
 <script>
-const cont=document.getElementById("cont")
+    const cont=document.getElementById("cont")
 
-    let LSwish=JSON.parse(localStorage.getItem("wlist")) || [];
     let LScart=JSON.parse(localStorage.getItem("cart")) || [];
+    console.log(LScart)
 
-display(LSwish)
-console.log(LSwish)
+display(LScart)
 function display(data){
     cont.innerHTML=null;
     data.forEach((elem,ind)=>{
@@ -307,7 +308,9 @@ function display(data){
         const price=document.createElement("h4")
         const title=document.createElement("p")
         const cat=document.createElement("p")
-        const Add=document.createElement("button")
+        const inc=document.createElement("button")
+        const quant=document.createElement("span")
+        const dec=document.createElement("button")
         const rem=document.createElement("button")
 
         img.src=elem.img;
@@ -315,19 +318,21 @@ function display(data){
         price.innerText=`$ ${elem.price}`;
         title.innerText=elem.title;
         cat.innerText=elem.type;
-        Add.innerText="Add to Cart";
-        Add.addEventListener("click",(()=>{
+        inc.innerText="+";
+        quant.innerText=elem.quantity;
+        dec.innerText="+";
+        Add.addEventListener("click",function(){
             LScart.push(elem);
             localStorage.setItem("cart",JSON.stringify(LScart));
-        }));
+});
 
-        rem.innerHTML="Remove";
-        rem.addEventListener('click',(()=>{
+        rem.innerText="Remove";
+        rem.addEventListener('click',function(){
             data.splice(ind,1)
             display(data)
-        }));
+        });
 
-        card.append(img,brand,price,title,cat,Add,rem);
+        card.append(img,brand,price,title,cat,inc,quant,dec,rem);
         cont.append(card);
     })
 }
