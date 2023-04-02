@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./logo-white - Copy1.png">
     <title>Cart</title>
     <!-- <link rel="stylesheet" href="./wishlist.css"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -66,7 +67,6 @@ body{
     margin-bottom: 20px;
     border-radius: 20px;
 }
-
 #nav2{
     /* border: 1px solid red; */
     width: 100%;
@@ -108,6 +108,23 @@ body{
     text-align: center;
 }
 /* -----------------------cont----------------------------- */
+#main{
+    display: flex;
+    margin: auto;
+}
+#main>#total {
+    width: 30%;
+    /* border: 2px solid; */
+    height: fit-content;
+    padding: 40px;
+}
+#main>#total>a>button{
+    border: none;
+    color: #f8f3f3;
+    padding: 10px;
+    font-weight: 550;
+    background-color: rgb(5, 110, 5);
+}
 #cont{
     width: 70%;
     display: grid;
@@ -126,6 +143,10 @@ body{
 }
 #cont>div p{
     margin: 10px;
+}
+#filters{
+    width: 80%;
+    margin: 5px auto;
 }
 /* -------------------footer------------------------- */
 #footer{
@@ -169,6 +190,7 @@ body{
     padding: 0px 30px;
 }
 
+
 </style>
 </head>
 <body>
@@ -195,7 +217,6 @@ body{
             <a href="./cart.html"><i class="fa-solid fa-bag-shopping" style="color: #ffffff;"></i></a>
         </div>
     </div>
-
 
     <div id="nav2">
         <div id="nav2a">
@@ -233,9 +254,21 @@ body{
     </div>
 <!-- -----------------------top---------------------------------- -->
 
+<!-- <h1 id="total">Your Total cart Price is:- <span id="cart-total">0</span></h1>
+-->
+<div id="main">
     <div id="cont">
         
     </div>
+    <div id="total">
+        <h3>TOTAL</h3>
+        <p>Sub-total <span class="txt" id="cart-total">0</span></p> 
+        <p>Shipping <span class="txt"> &#8505;</span></p> 
+        <p>Sales tax <span class="txt"> &#8505;</span></p> 
+        <a href="./checkout.html"><button>Proceed To Checkout</button></a> 
+    </div>
+</div>
+
     <!-- -----------------footer-------------------------------- -->
     <div id="footer">
         <div id="icons">
@@ -294,9 +327,8 @@ body{
 </body>
 <script>
     const cont=document.getElementById("cont")
-
+    let LSwish=JSON.parse(localStorage.getItem("wlist")) || [];
     let LScart=JSON.parse(localStorage.getItem("cart")) || [];
-    console.log(LScart)
 
 display(LScart)
 function display(data){
@@ -309,7 +341,7 @@ function display(data){
         const title=document.createElement("p")
         const cat=document.createElement("p")
         const inc=document.createElement("button")
-        const quant=document.createElement("span")
+        const quan=document.createElement("span")
         const dec=document.createElement("button")
         const rem=document.createElement("button")
 
@@ -318,23 +350,45 @@ function display(data){
         price.innerText=`$ ${elem.price}`;
         title.innerText=elem.title;
         cat.innerText=elem.type;
-        inc.innerText="+";
-        quant.innerText=elem.quantity;
-        dec.innerText="+";
-        Add.addEventListener("click",function(){
-            LScart.push(elem);
-            localStorage.setItem("cart",JSON.stringify(LScart));
-});
-
-        rem.innerText="Remove";
+        inc.innerText="+"
+        dec.innerText="-";
+        quan.innerText=elem.quantity;
+        rem.innerText="Remove"
         rem.addEventListener('click',function(){
-            data.splice(ind,1)
-            display(data)
-        });
-
-        card.append(img,brand,price,title,cat,inc,quant,dec,rem);
+        data=data.filter(function(ele){
+            return ele.id!==elem.id
+        })
+        localStorage.setItem('cart',JSON.stringify(LScart))
+        display(data)
+        })
+        inc.addEventListener('click',function(){
+        elem.quantity++
+        localStorage.setItem('cart',JSON.stringify(LScart))
+        display(data)
+        })
+        dec.addEventListener('click',function(){
+        if(elem.quantity>1)
+        {
+            elem.quantity--
+        localStorage.setItem('cart',JSON.stringify(LScart))
+        display(data)
+        }
+        })
+        card.append(img,brand,price,title,cat,inc,quan,dec,rem);
         cont.append(card);
     })
+
+    let total=document.getElementById("cart-total")
+
+let sum=0;
+for(let a=0;a<data.length;a++)
+{
+sum+=data[a].quantity*data[a].price
 }
+total.innerText=`$${sum.toFixed(2)}`
+}
+
+
+
 </script>
 </html>

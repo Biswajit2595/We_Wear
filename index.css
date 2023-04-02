@@ -108,14 +108,44 @@ body{
 #hero>#hero_holder{
     width: 90%;
     height: 800px;
-    /* align-items: center; */
-}
-#hero>#hero_holder>h2{
-    color: #FFFFFF;
     margin: auto;
-    
 }
-/* <------------------footer----------------------------> */
+#hero>#hero_holder>div{
+    color: #FFFFFF;
+    padding-top: 25%;
+}
+#hero>#hero_holder>div>div{
+    /* width: fit-content; */
+    margin: auto;
+    /* border: 2px solid wheat; */
+    color: #000;
+}
+#hero>#hero_holder>div>div>h1{
+    background-color: #eeeeee;
+    padding: 10px;
+    font-size: 45px;
+    width: fit-content;
+    margin: 0px auto;
+}
+#hero>#hero_holder>div>div>p{
+    /* border: 2px solid; */
+    width: fit-content;
+    margin: auto;
+    padding: 10px;
+    background-color: #eeeeee;
+}
+#hero>#hero_holder>div>a>button{
+    border: none;
+    font-size: 16px;
+    font-weight: 550;
+    padding: 10px;
+    margin: 15px;
+}
+#hero>#hero_holder>div>a>button:hover{
+    background-color: #090909;
+    color: #eeeeee;
+}
+/* <-------------------------------footer-------------------------------------> */
 #footer{
     /* border: 2px solid blue; */
     margin: auto;

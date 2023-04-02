@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./logo-white - Copy1.png">
     <title>Wishlist</title>
     <link rel="stylesheet" href="./wishlist.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -291,6 +292,7 @@ body{
     </div>
 </body>
 <script>
+
 const cont=document.getElementById("cont")
 
     let LSwish=JSON.parse(localStorage.getItem("wlist")) || [];
@@ -308,7 +310,7 @@ function display(data){
         const title=document.createElement("p")
         const cat=document.createElement("p")
         const Add=document.createElement("button")
-        const rem=document.createElement("button")
+        const wish=document.createElement("button")
 
         img.src=elem.img;
         brand.innerText=elem.brand;
@@ -317,11 +319,16 @@ function display(data){
         cat.innerText=elem.type;
         Add.innerText="Add to Cart";
         Add.addEventListener("click",(()=>{
-            LScart.push(elem);
+            if(checkcart(elem)){
+                alert("Product Already in Cart");
+            }else{
+                LScart.push({...elem,quantity:1});
             localStorage.setItem("cart",JSON.stringify(LScart));
+        }
+            
         }));
 
-        rem.innerHTML="Remove";
+        rem.innerHTML="&#9829;";
         rem.addEventListener('click',(()=>{
             data.splice(ind,1)
             display(data)
@@ -331,5 +338,6 @@ function display(data){
         cont.append(card);
     })
 }
+
 </script>
 </html>

@@ -442,17 +442,7 @@ fltrbtn.addEventListener("click",function(){
 const search=document.getElementById("search")
 search.addEventListener("input", function () {
     let filtered = prod.filter(function (element) {
-        if (element.brand.toUpperCase().includes(search.value.toUpperCase()) === true) {
-            return true;
-        } else {
-            return false;
-        }
-    })
-    display(filtered);
-})
-search.addEventListener("input", function () {
-    let filtered = prod.filter(function (element) {
-        if (element.type.toUpperCase().includes(search.value.toUpperCase()) === true) {
+        if ((element.brand.toUpperCase().includes(search.value.toUpperCase()) === true)||(element.type.toUpperCase().includes(search.value.toUpperCase()) === true)) {
             return true;
         } else {
             return false;
@@ -495,15 +485,15 @@ function display(data){
 
         wish.innerHTML="&#9829;";
         wish.addEventListener('click',(()=>{
-            // if(checklist(elem)){alert("Product Already in Wishlist")}
-            // else{
+            if(checklist(elem)){alert("Product Already in Wishlist")}
+            else{
                 LSwish.push(elem);
             localStorage.setItem('wlist',JSON.stringify(LSwish))
-            // }
+            }
             
         }));
 
-        card.append(img,brand,price,title,cat,Add,wish);
+        card.append(img,brand,price,wish,title,cat,Add);
         cont.append(card);
     })
 }
@@ -519,13 +509,13 @@ let checkcart=((elem)=>{
     }
 })
 
-// let checklist=((elem)=>{
-//     for(let a=0;a<LSwish.length;a++)
-//     {
-//         if(elem.id===LSwish[a].id)
-//         {
-//             return true;
-//         }
-//         return false;
-//     }
-// })
+let checklist=((elem)=>{
+    for(let a=0;a<LSwish.length;a++)
+    {
+        if(elem.id===LSwish[a].id)
+        {
+            return true;
+        }
+        return false;
+    }
+})
