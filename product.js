@@ -439,7 +439,21 @@ fltrbtn.addEventListener("click",function(){
     display(fltrd)
     }
 })
+const search=document.getElementById("search")
+search.addEventListener("input", function () {
+    let filtered = prod.filter(function (element) {
+        if ((element.brand.toUpperCase().includes(search.value.toUpperCase()) === true)||(element.type.toUpperCase().includes(search.value.toUpperCase()) === true)) {
+            return true;
+        } else {
+            return false;
+        }
+    })
+    display(filtered);
+})
 
+let LSwish=JSON.parse(localStorage.getItem("wlist")) || [];
+console.log(LSwish)
+let LScart=JSON.parse(localStorage.getItem("cart")) || [];
 
 display(prod)
 function display(data){
@@ -452,16 +466,60 @@ function display(data){
         const title=document.createElement("p")
         const cat=document.createElement("p")
         const Add=document.createElement("button")
+        const wish=document.createElement("button")
 
         img.src=elem.img;
         brand.innerText=elem.brand;
         price.innerText=`$ ${elem.price}`;
         title.innerText=elem.title;
         cat.innerText=elem.type;
-        Add.innerText="Add to Cart"
+        Add.innerText="Add to Cart";
+        Add.addEventListener("click",(()=>{
+            if(checkcart(elem)){
+                alert("Product Already in Cart");
+            }else{
+                LScart.push({...elem,quantity:1});
+            localStorage.setItem("cart",JSON.stringify(LScart));
+        }
+            
+        }));
 
-        card.append(img,brand,price,title,cat,Add);
+        wish.innerText="&#9829;";
+        wish.addEventListener('click',(()=>{
+            if(checklist(elem)){
+                alert("Product Already in Wishlist")
+            }
+            else
+            {
+                LSwish.push(elem);
+            localStorage.setItem('wlist',JSON.stringify(LSwish))
+            }
+            
+        }));
+
+        card.append(img,brand,price,wish,title,cat,Add);
         cont.append(card);
     })
 }
 
+let checkcart=((elem)=>{
+    for(let a=0;a<LScart.length;a++)
+    {
+        if(elem.id===LScart[a].id)
+        {
+            return true;
+        }
+        return false;
+    }
+})
+
+let checklist=((elem)=>{
+    for(let a=0;a<LSwish.length;a++)
+    {
+        if(elem.id===LSwish[a].id)
+        {
+            return true;
+        }
+        return false;
+    }
+})
